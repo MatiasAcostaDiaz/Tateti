@@ -2,8 +2,8 @@
 #include <stdio.h>
 int main(void)
 {
-  int termino = 0, random = 0, ingresobien = 1, res;
-  char x, y;
+  int termino = 0, random = 0, ingresobien = 1, res, res2;
+  int x, y;
   char players[2];
   char tablero[3][3] = {{"   "},{"   "},{"   "}};
   random = generar_random();
@@ -20,31 +20,22 @@ int main(void)
       print_tablero(tablero);
       while(ingresobien != 0)
 	{
-	  printf("Ingrese la primera coordenada: \n");
-	  x = getchar();
+	  printf("Ingrese las coordenadas separadas de un espacio\n");
+	  scanf("%i%i", &x, &y);
 	  res = validaten(x);
-	  if (res == 0)
+	  res2 = validaten(y);
+	  if (res == 0 && res2 == 0)
 	    {
-	      printf("Ingrese la segunda coordenada: \n");
-	      y = getchar();
-	      printf("Llego aca");
-		break;
-	      res = validaten(y);
+	      res = validatec(tablero, x, y);
 	      if (res == 0)
 		{
-	 	printf("Las 2 cordenadas estaban bien");
-		  res = validatec(tablero, (int)x, (int)y);
-		  if (res == 0)
-		    {
-		      ingresobien = 0;
-		      printf("todo bien");
-		    }
-		else
-		{
-			printf("Error cordenada ocupada");
-		}
-		}
-	    }
+		  printf("todo bien");
+		}else{
+		printf("todo mal");
+	      }
+	    }else{
+	    printf("Ingrese coordenadas correctas \n \n");
+	  }
 	}
     }
   }
