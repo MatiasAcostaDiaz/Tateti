@@ -20,22 +20,29 @@ int main(void)
       print_tablero(tablero);
       while(ingresobien != 0)
 	{
-	  printf("Ingrese la primera coordenada");
+	  printf("Ingrese la primera coordenada: \n");
 	  x = getchar();
 	  res = validaten(x);
 	  if (res == 0)
 	    {
-	      printf("Ingrese la segunda coordenada");
+	      printf("Ingrese la segunda coordenada: \n");
 	      y = getchar();
+	      printf("Llego aca");
+		break;
 	      res = validaten(y);
 	      if (res == 0)
 		{
+	 	printf("Las 2 cordenadas estaban bien");
 		  res = validatec(tablero, (int)x, (int)y);
 		  if (res == 0)
 		    {
 		      ingresobien = 0;
 		      printf("todo bien");
 		    }
+		else
+		{
+			printf("Error cordenada ocupada");
+		}
 		}
 	    }
 	}
