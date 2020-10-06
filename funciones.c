@@ -41,9 +41,9 @@ int validatec (char (*tablero)[3], int x, int y)
         return (1);
 }
 
-int validaten (char c)
+int validaten (int n)
 {
-    if (c >= 48 && c <= 50)
+    if (n >=0 && n <=2)
         return (0);
     else
         return (1);
