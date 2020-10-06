@@ -2,8 +2,8 @@
 #include <stdio.h>
 int main(void)
 {
-  int termino = 0, random = 0, ingresobien = 1;
-  char c;
+  int termino = 0, random = 0, ingresobien = 1, res;
+  char x, y;
   char players[2];
   char tablero[3][3] = {{"   "},{"   "},{"   "}};
   random = generar_random();
