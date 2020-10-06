@@ -34,11 +34,10 @@ int main(void)
 		  if (res == 0)
 		    {
 		      ingresobien = 0;
-		      printf("todo bien")
+		      printf("todo bien");
 		    }
 		}
 	    }
 	}
     }
   }
-}

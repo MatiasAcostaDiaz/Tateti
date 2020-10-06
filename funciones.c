@@ -33,7 +33,7 @@ int generar_random(void)
     }
 }
 
-int validatec ( char *tablero, int x, int y)
+int validatec (char (*tablero)[3], int x, int y)
 {
     if (tablero[x][y] == ' ')
         return (0);
