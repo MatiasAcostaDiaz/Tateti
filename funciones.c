@@ -3,21 +3,15 @@
 #include <time.h>
 #include "funciones.h"
 
-int verificar(char c,char (*tab)[3],int x, int y){
 
-char p;
-
-if  (tab[x][y] != ' ')
-        return 1;
-}
-
+/*Imprimir el tablero*/
 void print_tablero(char (*tablero)[3]){
 
-printf("* 0 1 2\n0 %c|%c|%c\n1 %c|%c|%c\n2 %c|%c|%c\n",tablero[0][0], tablero[0][1], tablero[0][2], tablero[1][0],
+printf("\e[34m* 0 1 2 \n0\e[0m %c|%c|%c\n\e[34m1\e[0m %c|%c|%c\n\e[34m2\e[0m %c|%c|%c\n",tablero[0][0], tablero[0][1], tablero[0][2], tablero[1][0],
 tablero[1][1],tablero[1][2], tablero[2][0], tablero[2][1], tablero[2][2]);
 
 }
-
+/*Generar un numero random entre 0 y 1*/
 int generar_random(void)
 {
   int random;
@@ -32,8 +26,8 @@ int generar_random(void)
       return(1);
     }
 }
-
-int validatec (char (*tablero)[3], int x, int y)
+/*Validar que la posicion no este ocupada*/
+int validate_position (char (*tablero)[3], int x, int y)
 {
     if (tablero[x][y] == ' ')
         return (0);
@@ -41,7 +35,13 @@ int validatec (char (*tablero)[3], int x, int y)
         return (1);
 }
 
-int validaten (int n)
+void ingresar_tablero(char (*tablero)[3], int x, int y)
+{
+   tablero[x][y] = 'X';
+}
+
+/*Validar que el numero ingresado sea entre 0 y 2*/
+int validate_number (int n)
 {
     if (n >=0 && n <=2)
         return (0);
