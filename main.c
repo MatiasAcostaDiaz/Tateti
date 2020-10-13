@@ -20,7 +20,7 @@ int main(void)
   while(termino != 1 || turno < 9)
   {
   system("clear");
-  print_tablero(tablero);
+  print_tablero(tablero, players);
 	  printf("Ingrese las coordenadas separadas de un espacio\n");
 	  scanf("%i%i", &x, &y);
 	  res = validate_number(x);
@@ -33,7 +33,7 @@ int main(void)
 		  printf("todo bien\n");
 		  printf("%d\n", turno);
 		   ingresar_tablero(tablero, players, x, y,turno);
-		   print_tablero(tablero);
+		   print_tablero(tablero, players);
 		   turno++;
 		}else{
 		printf("todo mal");

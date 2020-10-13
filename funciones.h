@@ -1,4 +1,4 @@
-void print_tablero(char (*tablero)[3]);
+void print_tablero(char (*tablero)[3], char *players);
 int verificar(char c,char (*tab)[3],int x, int y);
 int generar_random(void);
 int validate_position (char (*tablero)[3], int x, int y);
