@@ -7,7 +7,7 @@
 /*Imprimir el tablero*/
 void print_tablero(char (*tablero)[3]){
 
-printf("\e[34m* 0 1 2 \n0\e[0m %c|%c|%c\n\e[34m1\e[0m %c|%c|%c\n\e[34m2\e[0m %c|%c|%c\n",tablero[0][0], tablero[0][1], tablero[0][2], tablero[1][0],
+printf("\e[1mTic Tac Toe\e[0m\n\e[34m* 0 1 2 \n0\e[0m %c|%c|%c\n\e[34m1\e[0m %c|%c|%c\n\e[34m2\e[0m %c|%c|%c\n",tablero[0][0], tablero[0][1], tablero[0][2], tablero[1][0],
 tablero[1][1],tablero[1][2], tablero[2][0], tablero[2][1], tablero[2][2]);
 
 }
@@ -16,7 +16,7 @@ int generar_random(void)
 {
   int random;
   srand(time(NULL));
-  random = rand();
+  random = rand(); 
   if (random % 2 == 0)
     {
       return(0);
@@ -35,9 +35,17 @@ int validate_position (char (*tablero)[3], int x, int y)
         return (1);
 }
 
-void ingresar_tablero(char (*tablero)[3], int x, int y)
+void ingresar_tablero(char (*tablero)[3],char *players, int x, int y, int turno)
 {
-   tablero[x][y] = 'X';
+   if (turno % 2 == 0)
+    {
+      tablero[x][y] = players[0];
+    }
+    else
+    {
+        tablero[x][y] = players[1];
+    }
+    
 }
 
 /*Validar que el numero ingresado sea entre 0 y 2*/
