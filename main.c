@@ -4,7 +4,7 @@
 
 int main(void)
 {
-  int termino = 0, random = 0, ingresobien = 1, res, res2,turno = 1;
+  int termino = 0, random = 0, ingresobien = 1, res, res2,turno = 1,win = 0;
   int x, y, asig;
   char players[2];
   char tablero[3][3] = {{"   "},{"   "},{"   "}};
@@ -20,7 +20,13 @@ int main(void)
   while(termino != 1 || turno < 9)
   {
   system("clear");
-  print_tablero(tablero, players);
+  print_tablero(tablero, players[0], players[1]);
+   win = is_win(tablero, players[0], players[1]);
+  if(win != 0)
+  {  
+	printf("\e[93mFelicitaciones Jugador\e[0m \e[33m%d\e[0m\e[93m ha ganado\n\e[0m",win);
+	  return(0);
+  }
 	  printf("Ingrese las coordenadas separadas de un espacio\n");
 	  scanf("%i%i", &x, &y);
 	  res = validate_number(x);
@@ -33,7 +39,7 @@ int main(void)
 		  printf("todo bien\n");
 		  printf("%d\n", turno);
 		   ingresar_tablero(tablero, players, x, y,turno);
-		   print_tablero(tablero, players);
+
 		   turno++;
 		}else{
 		printf("todo mal");
