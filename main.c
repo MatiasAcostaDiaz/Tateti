@@ -43,7 +43,6 @@ int main(void)
 		   turno++;
 		}else{
 		printf("todo mal");
-
 	      }
 	    }else{
 	    printf("Ingrese coordenadas correctas \n \n");

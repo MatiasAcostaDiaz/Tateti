@@ -3,7 +3,6 @@
 #include <time.h>
 #include "funciones.h"
 
-
 /*Imprimir el tablero*/
 void print_tablero(char (*tablero)[3],char player_one, char player_two){
 
@@ -20,13 +19,10 @@ for(i = 0; i < 3; i++){
       position[pos] = '1';
     }
     pos++;
-    
-
   }
 }
-
 printf
-("\e[1mTic Tac Toe\e[0m\n\e[34m* 0 1 2 \n0\e[0m \e[3%cm%c\e[0m|\e[3%cm%c\e[0m|\e[3%cm%c\e[0m\n\e[34m1\e[0m \e[3%cm%c\e[0m|\e[3%cm%c\e[0m|\e[3%cm%c\e[0m\n\e[34m2\e[0m \e[3%cm%c\e[0m|\e[3%cm%c\e[0m|\e[3%cm%c\e[0m\n",
+("\e[1m\tTic Tac Toe\e[0m\n\e[34m\t  * 0 1 2 \n\t  0\e[0m \e[3%cm%c\e[0m|\e[3%cm%c\e[0m|\e[3%cm%c\e[0m\n\e[34m\t  1\e[0m \e[3%cm%c\e[0m|\e[3%cm%c\e[0m|\e[3%cm%c\e[0m\n\e[34m\t  2\e[0m \e[3%cm%c\e[0m|\e[3%cm%c\e[0m|\e[3%cm%c\e[0m\n",
 position[0],tablero[0][0], position[1],tablero[0][1], position[2],tablero[0][2],
 position[3], tablero[1][0],position[4],tablero[1][1],position[5],tablero[1][2],
 position[6], tablero[2][0],position[7], tablero[2][1],position[8], tablero[2][2]);
@@ -120,8 +116,5 @@ int is_win(char (*tablero)[3], char player_one, char player_two)
   {
     return(1);
   }
-  
   return(0);
-  
-
 }
